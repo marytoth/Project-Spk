@@ -9,6 +9,6 @@ function checklogin(user, pass) {
 	if(user.trim() === "" || pass.trim() === "") {
 		alert("Complete los datos, por favor.");
 	} else {
-		location.href = "login.html";
+		location.href = "index.html";
 	}
 }
