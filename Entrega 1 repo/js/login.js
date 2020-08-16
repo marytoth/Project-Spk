@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 });
 
-function checkLogin(user, pass) {
+function checklogin(user, pass) {
 	if(user.trim() === "" || pass.trim() === "") {
 		alert("Complete los datos, por favor.");
 	} else {
