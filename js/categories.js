@@ -11,8 +11,8 @@ function sortCategories(criteria, array){
     if (criteria === ORDER_ASC_BY_NAME)
     {
         result = array.sort(function(a, b) {
-            if ( a.cost < b.cost){ return -1; }
-            if ( a.cost > b.cost ){ return 1; }
+            if ( a.name < b.name){ return -1; }
+            if ( a.name > b.name ){ return 1; }
             return 0;
         });
     }else if (criteria === ORDER_DESC_BY_NAME){
@@ -41,8 +41,8 @@ function showCategoriesList(){
     for(let i = 0; i < currentCategoriesArray.length; i++){
         let category = currentCategoriesArray[i];
 
-        if (((minCount == undefined) || (minCount != undefined && parseInt(category.cost) >= minCount)) &&
-            ((maxCount == undefined) || (maxCount != undefined && parseInt(category.cost) <= maxCount))){
+        if (((minCount == undefined) || (minCount != undefined && parseInt(category.soldCount) >= minCount)) &&
+            ((maxCount == undefined) || (maxCount != undefined && parseInt(category.soldCount) <= maxCount))){
 
             htmlContentToAppend += `
             <a href="category-info.html" class="list-group-item list-group-item-action">
@@ -52,7 +52,7 @@ function showCategoriesList(){
                     </div>
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
-                             <h4 class="mb-1">` + category.name + ' ' + '|' + ' ' + category.currency + ' ' + category.cost + `</h4>
+                             <h4 class="mb-1">`+ category.name +`</h4>
                             <small class="text-muted">` + category.soldCount + ` artículos</small>
                         </div>
                         <p class="mb-1">` + category.description + `</p>
