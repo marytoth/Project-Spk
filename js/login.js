@@ -9,6 +9,8 @@ function checklogin(user, pass) {
 	if(user.trim() === "" || pass.trim() === "") {
 		alert("Complete los datos, por favor.");
 	} else {
+          localStorage.setItem("usuario",user.trim());
+          localStorage.setItem("contraseña",pass.trim());
 		location.href = "login.html";
 	}
 }
