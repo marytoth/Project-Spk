@@ -96,7 +96,7 @@ function sortAndShowProduct(sortCriteria, productArray){
             sortAndShowCProduct(ORDER_DESC_BY_PRICE);
         });
     
-        document.getElementById("sortCostByCount").addEventListener("click", function(){
+        document.getElementById("sortCostByRel").addEventListener("click", function(){
             sortAndShowProduct(ORDER_BY_PROD_REL);
         });
     
