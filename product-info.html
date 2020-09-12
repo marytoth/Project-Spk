@@ -13,6 +13,11 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <style>
+    .checked {
+      color: gold;
+    }
+    </style>
 </head>
 
 <body>
@@ -27,22 +32,107 @@
        <button id="logout-btn" onclick="localStorage.clear(); alert('Sesión cerrada'); location.href='index.html';">Cerrar Sesión</button>
       </div>
   </nav>
-  <div class="container p-5">
-    <!--<div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
+  <main role="main">
+  <div class="container p-5" > 
+    <h2>Productos</h2>
+    <p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
+    </div>
+    <div>
+     
+      <!--<div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
       <h4 class="alert-heading">¡A trabajar! :)</h4>
       <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
       <hr>
       <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
     </div>-->
+    <h3 id="productName"></h3>
+    <hr class="my-3">
+    <dl>
+      <dt>Descripción</dt>
+      <dd>
+        <p id="productDescription"></p> <br/>
+      </dd>
+
+       <dt>Precio</dt>
+       <dd>
+        <p id="productCost"></p> <br/>
+       </dd>
+
+
+      <dt>Cantidad de productos en la categoría</dt>
+      <dd>
+        <p id="productSoldCount"></p>
+      </dd>
+
+      <dt>Categoría</dt>
+      <dd>
+        <p id="productCategory"></p>
+      </dd>
+
+      <dt>Productos relacionados</dt>
+      <dd> <p id="productRelatedProducts">
+
+      </dd>
+
+      <dt>Imágenes ilustrativas</dt>
+      <dd>
+        <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+        </div>
+      </dd>
+  
+    <dt> Casilla de Comentarios </dt>
+    <dd id="comments-list"> </dd> 
+    </dl> 
+    <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
   </div>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-right">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-     <!-- <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p> -->
-    </div>
+    <form>
+        
+    <textarea name="comment" rows=5 cols=40 placeholder= "Agregue aquí sus comentarios">
+  
+    </textarea>
+    </form>
+    
+          <hr> ¡Puntúa!: <select id="puntuacion">
+            
+    
+       <option value=1> 1</option>
+       <option value=2> 2</option>
+       <option value=3> 3</option>
+       <option value=4> 4</option>
+       <option value=5> 5</option>
+       
+         </select>
+       
+       <br/>
+       <input type="submit" value="enviar">
+       <br/>
+        
+       
+       Valoración: <span id="valort"></span>
+      <script> 
+       function puntuacion(estrellas){ 
+       
+         document.getElementById('valort').innerHTML = estrellas;
+       }
+       
+        document.getElementById('puntuacion').addEventListener('change', function(){ 
+       
+         puntuacion(document.getElementById('puntuacion').value);
+         
+         
+
+        }) ; // el 'change' es para que cambie el select
+      
+        </script>
+</main>
+<footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+      <a href="#">Volver arriba</a>
+    </p>
+    <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+    <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+  </div>
   </footer>
   <div id="spinner-wrapper">
     <div class="lds-ring">
@@ -59,3 +149,4 @@
 </body>
 
 </html>
+  
