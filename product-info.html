@@ -14,9 +14,20 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <style>
-    .checked {
+    body {
+      margin: 50px
+    }
+
+   .checked {
       color: gold;
     }
+
+     h2, h3 {
+       text-align:center;
+    }
+
+
+
     </style>
 </head>
 
@@ -35,7 +46,7 @@
   <main role="main">
   <div class="container p-5" > 
     <h2>Productos</h2>
-    <p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
+    <p class="lead" style="text-align: center;">Encontrarás aquí toda la información del producto seleccionado.</p>
     </div>
     <div>
      
@@ -79,20 +90,25 @@
         <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
         </div>
       </dd>
-  
+    <hr/>
+    <br>
+    <br> 
     <dt> Casilla de Comentarios </dt>
-    <dd id="comments-list"> </dd> 
+    <br>
+    <dd id="comments-list" style="color: teal;"> </dd> 
     </dl> 
-    <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
+   
   </div>
     <form>
         
-    <textarea name="comment" rows=5 cols=40 placeholder= "Agregue aquí sus comentarios">
+    <hr>
+    <br>
+     <textarea name="comment" rows=5 cols=40 >
   
     </textarea>
     </form>
     
-          <hr> ¡Puntúa!: <select id="puntuacion">
+          <hr> ¡Puntúa!:  <select id="puntuacion">
             
     
        <option value=1> 1</option>
@@ -125,6 +141,8 @@
       
         </script>
 </main>
+
+ <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
 <footer class="text-muted">
   <div class="container">
     <p class="float-right">
