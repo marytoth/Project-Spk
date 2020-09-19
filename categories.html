@@ -16,18 +16,33 @@
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
+       
       <div class="container d-flex flex-column flex-md-row justify-content-between">
         <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-         <a class="py-2 d-none d-md-inline-block" href="#"><span id="user" style="color:lightblue"></span></a>
-        <button id="logout-btn" onclick="localStorage.clear(); alert('Sesión cerrada'); location.href='index.html';">Cerrar Sesión</button>
-     
-      </div>
-     
+        <!-- <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>-->
+        <!--<a class="py-2 d-none d-md-inline-block" href="#"><span id="user" style="color:lightblue"></span></a>-->
+           <div class="dropdown">
+             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuBotton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+               <span id="user" style="color:lightblue"></span></button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownbtn">
+                    <a class="dropdown-item" class="cart" href="cart.html"><i class="fa-shopping-cart" :before></i> Carrito <span class="badge badge-success"> 0</span></a>
+                    <a class="dropdown-item" class="profile" href="my-profile.html"> Perfil </a>
+                    <a class="dropdown-item" class="logout" id="logout-btn" href="login.html" onclick="localStorage.clear(); alert('Sesión cerrada'); location.href='index.html';"> Cerrar Sesion </a>       
+
+                  </div>
+            </div>
+        <!--<button id="logout-btn" onclick="localStorage.clear(); alert('Sesión cerrada'); location.href='index.html';">Cerrar Sesión</button>
+      </div>-->
+      <div>
+
     </nav>
+    <script>
+      var sesion = localStorage.getItem("usuario");
+         document.getElementById('user').innerHTML=sesion;
+    </script>
     <main role="main" class="pb-5">
         <div class="text-center p-4">
             <h2>Categorías</h2>

@@ -132,4 +132,5 @@ function sortAndShowProduct(sortCriteria, productArray){
     
             showProductList();
         });
+
     });
