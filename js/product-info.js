@@ -71,6 +71,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
       
       showImagesGallery(product.images);
 
+    }
+
        getJSONData(PRODUCTS_URL).then(function (resultObject) {
          if (resultObject.status === "ok") {
            var productList = resultObject.data;
