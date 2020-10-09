@@ -105,8 +105,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
            ).innerHTML = htmlContentToAppend;
          }
        });
-    }
-  });
+    })
 
  
 
