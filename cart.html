@@ -63,7 +63,7 @@
          document.getElementById('user').innerHTML=sesion;
     </script>
   <div class="container p-5">
-    <h2> Tu carrito </h2> 
+    <h2 style="text-align:center;"> Tu carrito </h2> 
     <!--<h3> Tu carrito contiene <span class="badge" id="cartCont"></span> elementos</h3>
     <div id="cart"></div><br>
     <button id="pay" class="btn btn-primary">Pagar</button>
@@ -72,20 +72,22 @@
        
   <div class="container"> 
     <table class="table">
-      <thead class="thead-dark">
-        <tr>
+      <thead class="thead-gray">
+        <tr justify="center">
            <th scope="col"></th>
            <th scope="col">Cantidad</th> 
            <th scope="col">Articulo</th>
            <th scope="col">Precio Unitario</th>
            <th scope="col">Subtotal</th>
         </tr> 
-      </thead>
-      <tbody id="carrito">
-        
-      </tbody>
       
+      </thead>
+      <tbody id="cart"> 
+
+      </tbody>
     </table>
+    
+
   </div>
 
 
@@ -101,17 +103,17 @@
                 <h4 class="d-block my-3">Seleccione tipo de envío</h4> 
                 <br>
                 <div class="custom-control custom-radio">
-                  <input id="premiumradio" name="envioType" type="radio" class="custom-control-input" checked="" required="">
+                  <input id="premiumradio" name="envioType" type="radio" class="custom-control-input" checked="" required="" value="15" onclick="cart">
                   <label class="custom-control-label" for="premiumradio">Premium de 2 a 5 dias (15%)</label>
                 </div>
                 <br>
                 <div class="custom-control custom-radio">
-                  <input id="expressradio" name="envioType" type="radio" class="custom-control-input" required="">
+                  <input id="expressradio" name="envioType" type="radio" class="custom-control-input"  required="" value="7" onclick="cart">
                   <label class="custom-control-label" for="expressradio">Express 5 a 8 dias (7%)</label>
                 </div>
                 <br>
                 <div class="custom-control custom-radio">
-                  <input id="standardradio" name="envioType" type="radio" class="custom-control-input" required="">
+                  <input id="standardradio" name="envioType" type="radio" class="custom-control-input"  required="" value="5" onclick="cart" >
                   <label class="custom-control-label" for="standardradio">Estándar 12 a 15 dias (5%)</label>
                 </div>
                 <br>
@@ -123,6 +125,7 @@
               <hr>
                 <div><label for="state">Calle  </label><input box  id="addressStreet" required=""> <label for="state">N° de puerta<input box  id="streetNumb" required=""></label></div>
                <div><label for="state">Esquina</label> <input box  id="streetCorn" required=""></div>
+
               <hr class="mb-4">
               <h5 class="mb-3">Costos</h5>
               <ul class="list-group mb-3">
@@ -131,20 +134,25 @@
                       <h6 class="my-0">Precio</h6>
                       <small class="text-muted">Unitario del producto</small>
                     </div>
+
                     <span class="text-muted" id="subtotal"></span>
+                    <span class="text-muted" id="productCostText"></span>
+
                   </li>
                   <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
                       <h6 class="my-0">Porcentaje</h6>
-                      <small class="text-muted">Según el tipo de publicación</small>
+                      <small class="text-muted">Según el tipo de envío</small>
                     </div>
-                    <span class="text-muted" id="envio">-</span>
+
+                    <span class="text-muted" id="envio"></span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between">
                     <span>Total ($)</span>
-                    <strong id="total">-</strong>
+                    <strong id="total"></strong>
+                    <span class="text-muted" id="comissionText"></span>
                   </li>
-                </ul>
+                                  </ul>
               <hr class="mb-4">
               <button class="btn btn-primary btn-lg" type="submit">Finalizar compra</button>
             </form>
