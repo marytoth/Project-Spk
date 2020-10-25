@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
-
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <title>eMercado - Todo lo que busques está aquí</title>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>eMercado - Todo lo que busques está aquí</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
@@ -61,14 +59,12 @@
     <script>
       var sesion = localStorage.getItem("usuario");
          document.getElementById('user').innerHTML=sesion;
+
+
     </script>
   <div class="container p-5">
     <h2 style="text-align:center;"> Tu carrito </h2> 
-    <!--<h3> Tu carrito contiene <span class="badge" id="cartCont"></span> elementos</h3>
-    <div id="cart"></div><br>
-    <button id="pay" class="btn btn-primary">Pagar</button>
-    <button id="remove" class="btn btn-danger" onclick="localStorage.clear();">Borrar <span class="badge" id="aremove"> 0 </span></button>
-  </div>-->
+  
        
   <div class="container"> 
     <table class="table">
@@ -86,9 +82,13 @@
 
       </tbody>
     </table>
-    
 
+     <h3> Tu carrito contiene <span class="badge" id="cartCont"></span> elementos</h3>
+     <button id="pagar" class="btn btn-primary">Pagar</button>
+        <button id="borrar" class ="btn btn-danger" onclick=" localStorage.clear(); location.reload();">Borrar <span class="badge" id="remove"></span> artículos </button>
   </div>
+
+</div>
 
 
            <div class="col-md-4 mb-3">
@@ -100,31 +100,83 @@
                     
               <div> 
                 <hr>
-                <h4 class="d-block my-3">Seleccione tipo de envío</h4> 
+                <h4 class="d-block my-3">Seleccione tipo de envío</h4>
+                <div class="needs-validation">
+        <div class="invalid-feedback"> No seleccionaste el tipo de envío </div>
+        
                 <br>
                 <div class="custom-control custom-radio">
-                  <input id="premiumradio" name="envioType" type="radio" class="custom-control-input" checked="" required="" value="15" onclick="cart">
+                  <input id="premiumradio" name="envioType" type="radio" class="custom-control-input" checked="" required="" value="0.15" onclick="ship">
                   <label class="custom-control-label" for="premiumradio">Premium de 2 a 5 dias (15%)</label>
                 </div>
                 <br>
                 <div class="custom-control custom-radio">
-                  <input id="expressradio" name="envioType" type="radio" class="custom-control-input"  required="" value="7" onclick="cart">
+                  <input id="expressradio" name="envioType" type="radio" class="custom-control-input"  required="" value="0.07" onclick="ship">
                   <label class="custom-control-label" for="expressradio">Express 5 a 8 dias (7%)</label>
                 </div>
                 <br>
                 <div class="custom-control custom-radio">
-                  <input id="standardradio" name="envioType" type="radio" class="custom-control-input"  required="" value="5" onclick="cart" >
+                  <input id="standardradio" name="envioType" type="radio" class="custom-control-input"  required="" value="0.05" onclick="ship">
                   <label class="custom-control-label" for="standardradio">Estándar 12 a 15 dias (5%)</label>
                 </div>
                 <br>
                 <div class="row">
-                  <button type="button" class="m-1 btn btn-link" data-toggle="modal" data-target="#contidionsModal">Ver condiciones</button>
+                  <button type="button" class="m-1 btn btn-link" data-toggle="modal" data-target="#contidionsModal"> Ver condiciones </button>
                 </div>
               </div>
+              </div>
+                  
+             <div id="indicaciones"></div>
               <h4 class="row"> Dirección de envío </h4> 
               <hr>
-                <div><label for="state">Calle  </label><input box  id="addressStreet" required=""> <label for="state">N° de puerta<input box  id="streetNumb" required=""></label></div>
-               <div><label for="state">Esquina</label> <input box  id="streetCorn" required=""></div>
+              <form>
+                <script>
+                function validar(formulario)
+{   
+var street=document.getElementById('adress').value;
+var doorsNum=document.getElementById('adressnumber').value;
+var corner=document.getElementById('adresscorner').value;
+if (street.length==0) 
+{
+var errorStreet=document.createElement('p');
+errorStreet.innerHTML= 'Debes ingresar la calle';                   
+document.getElementById("indicaciones").appendChild(errorStreet);
+return false;
+}
+if (doorsNum.length==0) 
+{
+var doorsNum=document.createElement('p');
+doorsNum.innerHTML='Debes ingresar el n° de puerta';
+document.getElementById("indicaciones").appendChild(erroremail);
+return false;
+}
+if (corner.length==0) 
+{
+var errorCorner=document.createElement('p');
+errorCorner.innerHTML='Debes ingresar la esquina';            
+document.getElementById("indicaciones").appendChild(errorCorner);
+return false;
+}
+
+return true;
+}
+         </script>       
+                <label for="state" class="needs-validation">Calle</label><input box  id="address">
+          <div class="invalid-feedback"> Ingresá la calle</div><br>
+     
+        
+                   
+                   <label for="state" class="needs-validation"> N° de puerta</label> <input box  id="addressnumber" > 
+        <div class="invalid-feedback"> Ingresá el numero de puerta</div><br>
+        
+                  
+                 
+                     <label for="state" class="needs-validation">Esquina</label> <input box  id="addresscorner" >
+        <div class="invalid-feedback"> Ingresá la esquina </div><br>
+        
+             <input type="submit" value="Confirmar" id="Confirmar" name="Confirmar" onsubmit="return validar();">     
+                   
+    </form>
 
               <hr class="mb-4">
               <h5 class="mb-3">Costos</h5>
@@ -152,8 +204,80 @@
                     <strong id="total"></strong>
                     <span class="text-muted" id="comissionText"></span>
                   </li>
-                                  </ul>
+                  </ul>
               <hr class="mb-4">
+              <hr>
+              <br>
+    
+               <div class="center"><button data-toggle="modal" data-target="#modalmine" class="btn btn-primary center-block">Método de pago</button></div>
+
+
+
+<div class="modal fade" id="modalmine" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			
+			<h3 class="needs-validation" id="lineModalLabel">Seleccione método de pago</h3>
+        <div class="invalid-feedback"> No seleccionaste método de pago</div>
+   
+        
+
+
+		</div>
+		<div class="modal-body">
+			
+            
+			<form>
+        <script type="text/javascript">
+     function confirmation() 
+     {
+        if(confirm("Éstos datos son correctos?"))
+	{
+	   return true;
+	}
+	else
+	{
+	   return false;
+	}
+     }
+    </script>
+             <div class="needs-validation"></div>
+              <div class="form-group">
+                <input id="tarjetadecrédito" name="payMethod" type="radio" checked="" required="" > 
+                
+                <label for="InfoCredito">Tarjeta de crédito</label>
+                <input type="text" class="form-control" id="InputInfoCredito" placeholder="Ingrese el numero de su tarjeta" required=""  minlength="1" maxlength="16">
+                <input type="text" class="form-control" id="InputInfoCredito" placeholder="Ingrese codigo de seguridad" required=""  minlength="1" maxlength="5">
+                <input type="date" class="form-control" id="InputInfoCredito" placeholder="Ingrese fecha de vencimiento" required="" >
+                <br>
+                <br>
+
+                <input id="Transferencia" name="payMethod" type="radio"> 
+                
+                <label for="InfoTransferencia">Transferencia bancaria</label>
+                <input type="text" class="form-control" id="InputInfoTransferencia" placeholder="Ingrese el monto"  minlength="1" maxlength="15">
+
+              
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg" role="button" aria-roledescription="confirmation">Confirmar</button>
+              <button type="submit" class="btn logout-btn" aria-label="Close">Cerrar</button>
+            </form>
+
+		</div>
+		<div class="modal-footer">
+			
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+</div> 
+                 
+
+<br>
+<br>
+<hr>
               <button class="btn btn-primary btn-lg" type="submit">Finalizar compra</button>
             </form>
           </div>
