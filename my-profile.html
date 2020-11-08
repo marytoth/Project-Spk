@@ -45,14 +45,79 @@
        <button id="logout-btn" onclick="localStorage.clear(); alert('Sesión cerrada'); location.href='index.html';">Cerrar Sesión</button>
       </div>
   </nav>
+                  <br><br>
+                  <h2>Formulario de registro</h2>
+                  <hr>
+                  <hr>
+            <form id="form-data">
+              
   <div class="container p-5">
-    <!--<div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>-->
-  </div>
+     
+    <p class="lead">Ingresa tus datos personales</p>
+        
+        <div class="row justify-content-md-center">
+          <div class="col-md-8 order-md-1">
+            <br>
+            
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="Name">Nombre y apellido: </label>
+                  <input type="text" class="form-control" id="name&lastname" placeholder="" required="" maxlength="60" >
+                  <div class="invalid-feedback">
+                    Ingresa un nombre
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-6 mb-3">
+                      <label for="mail">E-mail</label>
+                      <input type="email" class="form-control" id="e-mail" placeholder="" value="" required="" maxlength="30" >
+                 <div class="invalid-feedback">
+                    Ingrese su dirección de e-mail
+                  </div>
+                 </div>
+              <!--<div class="row">
+                <div class="col-md-8 order-md-1">
+                    <label for="profile-img">Foto de perfil</label>
+                    <div class="needsclick dz-clickable" id="file-upload">
+                      <div class="dz-message needsclick">
+                        Adjunta tu foto o avatar aquí<br>
+                      </div>
+                    </div>
+                </div>
+              </div>-->
+              <div class="row">
+                  <div class="col-md-8 mb-3">
+                      <label for="age">Edad</label>
+                      <input type="number" class="form-control" id="age" placeholder="" required="" value="" >
+                  </div>
+                </div>
+              <div class="row">
+                  <div class="col-md-12 mb-3">
+                  <label for="zip">Telefono </label>
+                  <input type="text" class="form-control" id="phonenumb" placeholder="" required="" maxlength="13">
+                  <div class="invalid-feedback">
+                    Ingrese un numero de telefono
+                  </div>
+                </div>
+              </div>  
+                <div></div>
+                <hr>
+                 <div class="row">
+                   <br>
+                   <hr>
+                   <br>
+                                
+                </div>
+        
+        </div>
+     
+  <input type="button" class="btn btn-primary" onclick=guardar() style="background-color:forestgreen" value="Registrar" >     </div>
+      </div>
+   
+    </form>
+   
+    
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
