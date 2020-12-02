@@ -17,7 +17,7 @@
     <nav class="site-header sticky-top py-1 bg-dark">
        
       <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+        <a class="py-2 d-none d-md-inline-block" href="login.html">Inicio</a>
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
@@ -28,15 +28,16 @@
              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuBotton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                <span id="user" style="color:lightblue"></span></button>
                   <div class="dropdown-menu" aria-labelledby="dropdownbtn">
-                    <a class="dropdown-item" class="cart" href="cart.html"><i class="fas fa-shopping-cart"></i>  Carrito <span class="badge badge-success"> 0</span></a>
-                    <a class="dropdown-item" class="profile" href="my-profile.html"><i class="fas fa-user"></i>  Perfil </a>
-                    <a class="dropdown-item" class="logout" id="logout-btn" href="login.html" onclick="localStorage.clear(); alert('Sesión cerrada'); location.href='index.html';"><i class="fas fa-sign-out-alt"></i>  Cerrar Sesion </a>       
+                    <a class="dropdown-item cart" href="cart.html"><i class="fas fa-shopping-cart"></i>  Carrito <span class="badge badge-success"> 0</span></a>
+                    <a class="dropdown-item profile" href="my-profile.html"><i class="fas fa-user"></i>  Perfil </a>
+                    <a class="dropdown-item logout" id="logout-btn" href="login.html" onclick="localStorage.clear(); alert('Sesión cerrada'); location.href='index.html';"><i class="fas fa-sign-out-alt"></i>  Cerrar Sesion </a>       
 
                   </div>
             </div>
         <!--<button id="logout-btn" onclick="localStorage.clear(); alert('Sesión cerrada'); location.href='index.html';">Cerrar Sesión</button>
       </div>-->
-      <div>
+    </div>
+  
 
     </nav>
     <script>
@@ -44,12 +45,7 @@
          document.getElementById('user').innerHTML=sesion;
     </script>
      <div class="container p-5">
-      <!-- <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-        <h4 class="alert-heading">¡A trabajar! :)</h4>
-        <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 16/08/2020) y Entrega 2 (Fecha de entrega: 30/08/2020).</p>
-        <hr>
-        <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-      </div> -->
+     
     </div> 
     <main role="main" class="pb-5">
         <div class="text-center p-4">
@@ -71,11 +67,34 @@
                     </div>
                 </div>
             </div>
-           
-            <div class="row">
+            <div class="row justify-content-end">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 col-sm-12 mb-1 container">
+                    <div class="row container p-0 m-0">
+                        <div class="col">
+                            <p class="font-weight-normal text-right my-2">Cant.</p>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+                        </div>
+                        <div class="col-3 p-0">
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
+                                <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           <div class="row">
             <div class="card-deck" id="cat-list-container" >
-  </div>
-  </div>
+        </div>
+    </div>
+    </div>
+    
     </main>
 
     <footer class="text-muted bg-light">

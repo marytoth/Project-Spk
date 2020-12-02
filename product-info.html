@@ -32,7 +32,7 @@
   <nav class="site-header sticky-top py-1 bg-dark">
        
       <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+        <a class="py-2 d-none d-md-inline-block" href="login.html">Inicio</a>
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
@@ -95,13 +95,14 @@
       </dd>
 
       <dt>Productos relacionados</dt>
-      <dd> <p id="productRelatedProducts">
+                <dd class="row" id="productRelatedProducts">
 
-      </dd>
-
+                </dd>
       <dt>Imágenes ilustrativas</dt>
-       <hr> 
-       <div class="container" style="padding: 10pc;"> 
+       <dd>
+           <hr>
+       <div class="container" style="padding-left: 10%; padding-right: 10%;"><br>
+        
           <div id="repoCarousel" class="carousel slide" data-ride="carousel">
               <ol class="carousel-indicators">
               
@@ -121,13 +122,17 @@
               
           </div>
         </div>
-      
-    <hr/>
-    <br>
-    <br> 
+       </dd>
+        <dd> 
+          <hr>
+    
     <dt> Casilla de Comentarios </dt>
-    <br>
-    <dd id="comments-list" style="color: teal;"> </dd> 
+       <hr>
+    <dd style="color: gray;">
+      <div id="comments-list">
+   </dd> 
+      </div> 
+        </dd>
     </dl> 
    
   </div>
@@ -173,7 +178,7 @@
       
         </script>
 </main>
-   <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
+   
 <footer class="text-muted">
   <div class="container">
     <p class="float-right">

@@ -21,7 +21,7 @@ function sortProduct(criteria, array){
             if ( a.cost < b.cost ){ return 1; }
             return 0;
         });
-    }else if (criteria === ORDER_BY_PROD_REL){
+    }else if (criteria === ORDER_BY_PROD_BY_REL){
         result = array.sort(function(a, b) {
             let aCount = parseInt(a.soldCount);
             let bCount = parseInt(b.soldCount);
@@ -45,22 +45,20 @@ function showProductList(){
             ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount))){
 
             htmlContentToAppend += `
-                            <div class="card" class="col-sm-4 col-md-4 col-lg-4 text-center">
-                    <h5 class="card-title">`+ product.name +` </h5>
-                
-                        <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
-                    <div class="card-body">
-                    <p class="card-text">` + product.currency + ' ' + product.cost +`</p>
-                            
-                          <div class="card-footer"> 
-
-                            <small class="text-muted">` + product.soldCount + ` artículos</small>
-                  
-                        <p class="mb-1">` + product.description + `</p>
-                    </div>
+                <div class="col-sm-4 col-md-4 col-lg-4 text-center">
+                    <a class="card mb-4 shadow-sm custom-card" href="product-info.html">
+                        <h5 class="card-title">`+ product.name + ` </h5>
+                        <img src="` + product.imgSrc + `" alt="` + product.description + `" class="card-img-top">
+                        <div class="card-body">
+                            <p class="card-text">` + product.currency + ' ' + product.cost + `</p>
+                            <div class="card-footer"> 
+                                <small class="text-muted">` + product.soldCount + ` artículos</small>
+                                <p class="mb-1">` + product.description + `</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                </div
-                `
+                `;
         }
 
         document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
@@ -98,7 +96,7 @@ function sortAndShowProduct(sortCriteria, productArray){
         });
     
         document.getElementById("sortCostByRel").addEventListener("click", function(){
-            sortAndShowProduct(ORDER_BY_PROD_REL);
+            sortAndShowProduct(ORDER_BY_PROD_BY_REL);
         });
     
         document.getElementById("clearRangeFilter").addEventListener("click", function(){
