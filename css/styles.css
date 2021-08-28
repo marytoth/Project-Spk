@@ -11,7 +11,7 @@
   padding: 5em inherit;
   margin-bottom: 0;
   background-color: #53C0FB;
-  background: url('../doyang1.jpeg');
+  background: url('..img/portada pumas.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -68,7 +68,7 @@ footer p {
 }
 
 .dropzone{
-  border: 2px dashed #0087F7;
+  border: 2px dashed color: gray;
   border-radius: 5px;
   background: white;
 }
@@ -184,6 +184,7 @@ input {
   margin-bottom: 10px;
   border-radius: 10px;
   outline: none;
+  color: gray;
   
 
 }
