@@ -9,7 +9,7 @@ function checklogin(user, pass) {
 	} else {
           localStorage.setItem("usuario",user.trim());
           localStorage.setItem("contraseña",pass.trim());
-		location.href = "login.html";
+		location.href = "index.html";
 	}
 }
 
