@@ -68,7 +68,7 @@ footer p {
 }
 
 .dropzone{
-  border: 2px dashed  #808080;
+  border: 2px dashed ;
   border-radius: 5px;
   background: white;
 }
