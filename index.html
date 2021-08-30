@@ -13,123 +13,103 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
+
     <style>
-    .dropdown-menu{
-      float: right;
-    }
-    
+      /* Remove the navbar's default margin-bottom and rounded borders */ 
+      .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+      }
+      
+      /* Add a gray background color and some padding to the footer */
+      footer {
+        background-color: #f2f2f2;
+        padding: 25px;
+      }
     </style>
- </head>
+  </head>
   <body>
-    <nav class="site-header sticky-top py-1 bg-dark">
-       
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="login.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html"> Escuelas</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html">Sobre nosotros</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Calendario de Actividades</a>
-        <!-- <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>-->
-        <!--<a class="py-2 d-none d-md-inline-block" href="#"><span id="user" style="color:darkslategray"></span></a>-->
-           <div class="dropdown">
-             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuBotton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-               <span id="user" style="color: darkslategrey"></span></button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownbtn">
-                   <!--<a class="dropdown-item" class="cart" href="cart.html"><i class="fas fa-shopping-cart"></i>  Carrito <span class="badge badge-success"> 0</span></a> 
-                   <a class="dropdown-item" class="cart" href="cart.html"><i class="fas fa-shopping-cart"></i>  Carrito <span class="badge badge-success"> 0</span></a> --> 
-                   <a class="dropdown-item" class="login" href="login.html"><i class="fas fa-user"></i> Iniciar sesión </a>
-                   <a class="dropdown-item" class="register" href="my-profile.html"><i class="fas fa-user"></i>  Perfil </a>
-                    <a class="dropdown-item" class="logout" id="logout-btn" href="index.html" onclick="localStorage.clear(); alert('Sesión cerrada'); location.href='login.html';"><i class="fas fa-sign-out-alt"></i>  Cerrar Sesion </a>       
-
-                  </div>
-            </div>
-        <!--<button id="logout-btn" onclick="localStorage.clear(); alert('Sesión cerrada'); location.href='index.html';">Cerrar Sesión</button>
-      </div>-->
-      <div>
-
-    </nav>
-    <script>
-      var sesion = localStorage.getItem("usuario");
-         document.getElementById('user').innerHTML=sesion;
-    </script>
-    <main role="main">
-      <section class="jumbotron text-center">
-        <div class="m-5">
-          <h1></h1>
-        </div>
-      </section>
-      <div class="album py-5 bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                <img class="bd-placeholder-img card-img-top" > <!-- src="img/cat1.jpg"-->
-                <h3 class="m-3"> Cuarto Elemento </h3>
-                <div class="card-body">
-                  <p class="card-text"> Juan Baez 247</p>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-4">
-                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                  <img class="bd-placeholder-img card-img-top"> <!-- src="img/cat1.jpg"-->
-                  <h3 class="m-3">Sol Naciente</h3>
-                  <div class="card-body">
-                    <p class="card-text">Info doyang</p>
-                  </div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                  <img class="bd-placeholder-img card-img-top" > <!-- src="img/cat1.jpg"-->
-                  <h3 class="m-3"> Uri Guil</h3>
-                  <div class="card-body">
-                    <p class="card-text">Juan Baez 247.</p>
-                  </div>
-                </a>
-            </div>
-           <!-- <div class="col-md-4">
-                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                  <img class="bd-placeholder-img card-img-top" src="img/cat4.jpg">
-                  <h3 class="m-3">Herramientas (452)</h3>
-                  <div class="card-body">
-                    <p class="card-text">Herramientas para cualquier tipo de trabajo.</p>
-                  </div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                  <img class="bd-placeholder-img card-img-top" src="img/cat5.jpg">
-                  <h3 class="m-3">Computadoras (724)</h3>
-                  <div class="card-body">
-                    <p class="card-text">Todo en cuanto a computadoras, para uso de oficina y/o juegos.</p>
-                  </div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                  <img class="bd-placeholder-img card-img-top" src="img/cat6.jpg">
-                  <h3 class="m-3">Vestimenta (841)</h3>
-                  <div class="card-body">
-                    <p class="card-text">Gran variedad de ropa, nueva y de segunda mano.</p> -->
-                  </div>
-                </a>
-            </div>
-          </div>
-          <div class="row">
-              <a type="button" class="btn btn-light btn-lg btn-block" href="categories.html">Ver todas las escuelas</a>
-          </div>
-        </div>
+  
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="#">Portfolio</a>
       </div>
-    </main>
-    <footer class="text-muted">
-      <div class="container">
-        <p class="float-right">
-          <a href="#">Volver arriba</a>
-        </p>
-        <p> Proyecto Sipalki-do. Tacuarembó, Uruguay. </p>
-     
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
       </div>
-    </footer>
+    </div>
+  </nav>
+  
+  <div class="jumbotron">
+    <div class="container text-center">
+      <h1>My Portfolio</h1>      
+      <p>Some text that represents "Me"...</p>
+    </div>
+  </div>
+    
+  <div class="container-fluid bg-3 text-center">    
+    <h3>Some of my Work</h3><br>
+    <div class="row">
+      <div class="col-sm-3">
+        <p>Some text..</p>
+        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      </div>
+      <div class="col-sm-3"> 
+        <p>Some text..</p>
+        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      </div>
+      <div class="col-sm-3"> 
+        <p>Some text..</p>
+        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      </div>
+      <div class="col-sm-3">
+        <p>Some text..</p>
+        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      </div>
+    </div>
+  </div><br>
+  
+  <div class="container-fluid bg-3 text-center">    
+    <div class="row">
+      <div class="col-sm-3">
+        <p>Some text..</p>
+        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      </div>
+      <div class="col-sm-3"> 
+        <p>Some text..</p>
+        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      </div>
+      <div class="col-sm-3"> 
+        <p>Some text..</p>
+        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      </div>
+      <div class="col-sm-3">
+        <p>Some text..</p>
+        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      </div>
+    </div>
+  </div><br><br>
+  
+  <footer class="container-fluid text-center">
+    <p>Footer Text</p>
+  </footer>
+  
+  
+ 
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
